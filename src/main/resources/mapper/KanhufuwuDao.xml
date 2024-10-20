@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KanhufuwuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KanhufuwuEntity" id="kanhufuwuMap">
+        <result property="chongwumingcheng" column="chongwumingcheng"/>
+        <result property="chongwuleixing" column="chongwuleixing"/>
+        <result property="pinzhong" column="pinzhong"/>
+        <result property="tupian" column="tupian"/>
+        <result property="nianling" column="nianling"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="xingqing" column="xingqing"/>
+        <result property="jiyangshijian" column="jiyangshijian"/>
+        <result property="weishi" column="weishi"/>
+        <result property="jianmao" column="jianmao"/>
+        <result property="shipin" column="shipin"/>
+        <result property="linghuishijian" column="linghuishijian"/>
+        <result property="gonghao" column="gonghao"/>
+        <result property="kanhuxingming" column="kanhuxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KanhufuwuVO" >
+		SELECT * FROM kanhufuwu  kanhufuwu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KanhufuwuVO" >
+		SELECT  kanhufuwu.* FROM kanhufuwu  kanhufuwu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KanhufuwuView" >
+
+		SELECT  kanhufuwu.* FROM kanhufuwu  kanhufuwu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KanhufuwuView" >
+		SELECT * FROM kanhufuwu  kanhufuwu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
